@@ -1,54 +1,93 @@
-# Windows-Active-Directory-Automation-PowerShell-
+# Enterprise User Lifecycle Automation
 
-## Project Description
-This Powershell script automates the process of creating users in Active Directory by importing user data from a CSV file. The script handles bulk user creation, including setting passwords, enabling accounts, and enforcing password change at first login. it also includes error handing to log issues encouounter during user creation.
+## Overview
 
-## Features
-- import users from a csv file and create them in Active Directory
-- Automatically set up the user's name, username, email, password, and organizational unit(OU)
-- Force users to change their password upon first login
-- Error handling for failed user creation attempts
-- Log sucecess and erro messages for transparency
+This project simulates an enterprise-grade user onboarding and lifecycle management workflow for Windows Active Directory environments.
 
-## Techologies Used
-- PowerShell for script automation
-- Active Directory cmdletes for interacting with AD
-- CSV for importing user data
+The automation framework streamlines user provisioning by importing employee onboarding requests from structured CSV files and automatically creating Active Directory accounts, assigning organisational units, applying department-based group memberships, generating secure passwords, and producing operational logs and reports.
 
-## CSV File Format
+The project is designed to reflect real-world IT operations workflows commonly handled by service desk analysts, infrastructure support engineers, and junior systems administrators.
 
-The CSV should contain the following columns
-FirstName	LastName	UserName
-John	Stewart	jstewart
+---
 
-## Setup Instructions
+## Key Features
 
-## 1.Install the Active Directory Module
-To use the Active Directory cmdlets, you need to install the RSAT-AD-PowerShell module on your machine (if not already installed):
+- Bulk Active Directory user provisioning
+- CSV-driven onboarding workflows
+- Department-based OU assignment
+- Automated group membership allocation
+- Secure password generation
+- Password change enforcement
+- Operational logging and error handling
+- HTML and CSV reporting
+- Modular PowerShell architecture
+- Validation and duplicate account checking
+- Dry-run support for safe testing
 
-![image](https://github.com/user-attachments/assets/b829b9ae-48fa-4ca5-9cf5-ae0203fd63c5)
+---
 
-## 2.Prepare the CSV File
-Create a CSV file (users.csv) with user detailes like FirstName, LastName, and UserName. Place this file in the scripts directory or specify the corrct path in the script.
+## Technologies Used
 
-## 3. Modify the Script (Optional)
-You can modify the script to match your organizion's specific OU and domain settings. Change the -Path "OU=Users,DC=domain,DC=com" to the correct Organizational Unit (OU) and domain structure.
+- PowerShell 7
+- Active Directory Module
+- Windows Server
+- CSV Data Import
+- JSON Configuration Files
+- Windows Task Scheduler
 
-## 4. Running the Script
-To run the script, open PowerShell as Administrator and execute the script
-.\Create-users.ps1
+---
 
-## 5. Viewing OutPut
-- The script will output success messages for eachusr created.
-- if a user creation fails, an error message wil be displayed with the deatils of the failue
+## Architecture
 
-## Error Handling 
-The script uses a try/catch block to hanle any errors that occur during user ccreation. If the user creation fails(e.g. invalid data or insufficient permissions, an error message will be logged.
+The onboarding workflow follows a modular automation pipeline:
 
+1. Import onboarding requests
+2. Validate user data
+3. Provision Active Directory accounts
+4. Apply department-based permissions
+5. Generate logs and operational reports
+6. Export onboarding summaries
+
+---
+
+## Repository Structure
+
+```text
+enterprise-user-lifecycle-automation/
+
+├── config/
+├── docs/
+├── scripts/
+├── logs/
+├── reports/
+├── templates/
+├── screenshots/
+└── test-data/
+```
+
+---
+
+## Security Considerations
+
+- Credentials handled using secure strings
+- Principle of least privilege considered
+- Password rotation recommended
+- Logs sanitised to avoid credential exposure
+- RBAC-aware design principles
+
+---
+
+## Future Improvements
+
+- Microsoft Graph integration
+- Exchange Online automation
+- HTML dashboard reporting
+- Automated offboarding workflows
+- Scheduled onboarding tasks
+- Licence assignment automation
+
+---
 
 ## License
-This project is licensed under the MIT License - see the License.md file for details.
 
-
-
-		
+This project is licensed under the MIT License.
