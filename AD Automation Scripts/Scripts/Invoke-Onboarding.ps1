@@ -1,0 +1,1 @@
+# Main onboarding script
